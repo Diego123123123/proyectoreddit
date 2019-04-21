@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>sharedpost</title>
+</head>
+<body>
+<h1>shared post</h1>
+<section class="main container" th:each="post : ${postList}">
+    <div class="row"> </div>
+
+    <div th:if="${post.getUser().getId() == user}">
+        <section class="col-md-12">
+            <article class="publicacion clearfix">
+                <h2 class="publicacion-tittle" >
+                    <p th:text="${post.link}"></p>
+                </h2>
+                <p class="publicacion-contenido text-justify" th:text="${post.text}">
+
+                </p>
+
+            </article>
+            <hr />
+        </section>
+    </div>
+</section>
+
+</body>
+</html>
